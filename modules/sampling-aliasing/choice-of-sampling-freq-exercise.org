@@ -19,7 +19,7 @@
  has been designed to give attenuation of 0.1 at a desired Nyquist frequency, i.e. \(|H(i\omega_N)| = 0.1\).
 
   \begin{center}
-  \includegraphics[width=0.8\linewidth]{../figures/ps7-bessel-bode}
+  \includegraphics[width=0.8\linewidth]{../../figures/ps7-bessel-bode}
   \end{center}
 
   1. What is the bandwidth of the filter?
@@ -56,7 +56,7 @@
 ** Choice of bandwidth of antialiasing filter
 
 #+BEGIN_CENTER 
- \includegraphics[width=0.4\linewidth]{../figures/Astrom-fig73.png}
+ \includegraphics[width=0.4\linewidth]{../../figures/Astrom-fig73.png}
 #+END_CENTER
    The table can be used to find the delay in the feedback path caused by an antialiasing filter. For instance, if we want to have an attenuation at the Nyquist frequency equal to \(\beta = 0.01\), then a fourth-order Bessel low-pass filter will give a delay of about \(T_d = 3.2 h\), that is a delay of more than 3 sampling periods. 
    1. What is the advantage of using an antialiasing filter of higher order than 2?
@@ -80,7 +80,7 @@ Hints:
 - When sampling, the frequencies are "folded" at the Nyquist frequency.
 
 #+BEGIN_CENTER 
-\includegraphics[width=0.7\linewidth]{../figures/choose-sampling-frequency}
+\includegraphics[width=0.7\linewidth]{../../figures/choose-sampling-frequency}
 #+END_CENTER
 
 

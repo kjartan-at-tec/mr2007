@@ -1,0 +1,15 @@
+%% HW 6
+
+h = 0.5656;
+emh = exp(-h);
+
+F = [emh, 1-emh; 0, 1];
+G = [emh+h-1;h];
+C = [1, 0];
+D = [];
+
+sys = ss(F,G,C,D,h);
+
+pdesired = [0.5+0.5*i, 0.5-0.5*i];
+
+place(F,G,pdesired)
