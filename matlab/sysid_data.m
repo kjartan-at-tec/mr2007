@@ -22,7 +22,7 @@ t = (0:(2*N-1))'*h;
 uu = 2*( -0.5 + randi([0,1], 1, N) );
 u = cat(1, uu, uu);
 u1 = u(:);
-e1 = sigma*randn(size(u1));
+e1 = sigma*randn(size(u1));     
 
 y1 = lsim(H1, u1) + lsim(H1e, e1);
 
@@ -123,9 +123,10 @@ a = [1, par_3(1:2)'];
 p3hat = roots(a);
 
 disp('Estimation of second-order model with two poles, no zero, no delay')
-disp(sprintf('Estimated poles: %f + %f i and %f + %f i    True poles: %f + %f i and %f + %f i', ...
-    [real(p3hat(1)), imag(p3hat(1)), real(p3hat(2)), imag(p3hat(2)), ...
-    real(p31), imag(p31), real(p32), imag(p32)]))
+disp(sprintf('Estimated poles: %f + %f i and %f + %f i    ', ...
+    [real(p3hat(1)), imag(p3hat(1)), real(p3hat(2)), imag(p3hat(2))]))
+disp(sprintf('True poles: %f + %f i and %f + %f i', ...
+    [real(p31), imag(p31), real(p32), imag(p32)]))
 disp(sprintf('Estimated gain: %f    True gain: %f', [par_3(3), k3]))
 
 
@@ -138,9 +139,10 @@ b = par_12(3:4)';
 [num, den] = tfdata(H1);
 
 disp('Estimation of over-parameterized second-order model with two poles, one zero, no delay')
-disp(sprintf('Estimated A(q): [%f,  %f,  %f]      True A(q): [1, %f]', ...
-    a, -p1))
-disp(sprintf('Estimated B(q): [%f, %f]    True B(q): %f', b, 1-p1))
+disp(sprintf('Estimated A(q): [%f,  %f,  %f]', a))
+disp(sprintf('True A(q): [1, %f]', -p1))
+disp(sprintf('Estimated B(q): [%f, %f]', b))
+disp(sprintf('True B(q): %f',1-p1))
 
 
 %% Simulate and plot 

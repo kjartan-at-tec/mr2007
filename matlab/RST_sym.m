@@ -76,9 +76,11 @@ Ao = poly2sym(charpoly(diag(po)), z);
 
 
 % Left hand side of Diophantine eqn
+disp('Left hand side of Diophantine eqn')
 LHS = collect(A*R*z^d + B*S, z)
 
 % Right hand side
+disp('Right hand side of Diophantine eqn')
 RHS = collect(Ac*Ao, z)
 
 % Coefficients
