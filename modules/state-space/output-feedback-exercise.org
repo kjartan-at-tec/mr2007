@@ -11,7 +11,7 @@
 
 ** Complete the block diagram
    #+BEGIN_CENTER 
-    \includegraphics[width=\linewidth]{../figures/state-feedback-with-observer-incomplete}
+    \includegraphics[width=\linewidth]{../../figures/state-feedback-with-observer-incomplete}
    #+END_CENTER
 
    The control law is \(u(k) = l_0u_c(k) - L\hat{x}(k)\). The feedback to the observer is \(K\tilde{y}(k) = K\big(y_m(k) - \hat{y}(k)\big) = K\big(y(k) + n(k) - C\hat{x}(k)\big) \) 
@@ -42,7 +42,7 @@ y(kh) &= \bbm 0 & 1 \ebm x(kh).
 \end{align*}
 \end{minipage}
 \begin{minipage}{0.4\linewidth}
- \includegraphics[width=\linewidth]{../figures/fig2-12-two-tank-system.png}
+ \includegraphics[width=\linewidth]{../../figures/fig2-12-two-tank-system.png}
 \end{minipage}
 
 
@@ -50,7 +50,7 @@ y(kh) &= \bbm 0 & 1 \ebm x(kh).
 2. Determine a state feedback gain \(L\) such that the closed-loop system has poles in \( 0.8 \pm 0.1\).
 
 #+BEGIN_CENTER 
- \includegraphics[width=0.45\linewidth]{../figures/zgrid-crop}
+ \includegraphics[width=0.45\linewidth]{../../figures/zgrid-crop}
 #+END_CENTER
 
 \newpage 
@@ -76,6 +76,7 @@ u = 0; xhat = [0; 0];
 % Run the controller 
 while run_controller() % The function run_controller will return 0 if the controller should stop
    y = get_output();  % Returns the sampled output signal from the plant
+   uc = get_setpoint();  % Returns the desired water leve in the second tank
  
    % Update the observer
    
@@ -88,13 +89,13 @@ while run_controller() % The function run_controller will return 0 if the contro
    % Send the control signal to the plant
    write_control_signal(u);
    % Wait until next sampling instant
-   sleep(h);
+   sleep(h); % Assuming that the computational time is negligable
 end
    
 #+END_SRC
 
 
-* Solution							   :noexport:
+* Solution
 
 1. The estimation error of the observer satisfies the difference equation
    \[ \tilde{x}(kh+h) = \left( \Phi - KC \right) \tilde{x}(kh). \]

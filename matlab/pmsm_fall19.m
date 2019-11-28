@@ -80,7 +80,7 @@ A = Hden{1}
 
 p1_n = 0.8;
 p2_n = 0.8;
-obspole = 0;
+obspole = 0.5;
 po1_n = obspole;
 po2_n = obspole;
 Ao_n = conv([1, -po1_n], [1, -po2_n]);
@@ -88,12 +88,12 @@ Ao_n = conv([1, -po1_n], [1, -po2_n]);
 syms p1 p2 po1 po2
 vars = [p1, p2, po1, po2];
 numvals = [p1_n, p2_n, po1_n, po2_n];
-r1_n = double( subs(sol.r1, vars, numvals) );
-s0_n = double( subs(sol.s0, vars, numvals) );
-s1_n = double( subs(sol.s1, vars, numvals) );
-s2_n = double( subs(sol.s2, vars, numvals) );
+r1_n = double( subs(sol.r1, vars, numvals) )
+s0_n = double( subs(sol.s0, vars, numvals) )
+s1_n = double( subs(sol.s1, vars, numvals) )
+s2_n = double( subs(sol.s2, vars, numvals) )
 
-t0_n = double( subs(t0, vars, numvals) );
+t0_n = double( subs(t0, vars, numvals) )
 
 LHS = subs(LHS, vars, numvals) 
 RHS = subs(RHS, vars, numvals) 
@@ -113,8 +113,11 @@ Hc = F_ff * feedback(H, F_fb*Haa)
 Hvc = feedback(1, H*F_fb*Haa);
 
 figure(4)
-clf
+%clf
 step(Hc, Hvc)
+set(findobj(gcf,'Type', 'line'), 'linewidth', 2)
+hold on
+
 
 %% Alias of 60Hz
 fs = 1/h;

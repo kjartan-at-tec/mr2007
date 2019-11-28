@@ -1,0 +1,10 @@
+#+OPTIONS: toc:nil
+#+LaTeX_CLASS: koma-article 
+
+#+LaTex_HEADER: \usepackage{khpreamble, euscript}
+#+LaTex_HEADER: \DeclareMathOperator{\atantwo}{atan2}
+#+LaTex_HEADER: \newcommand*{\ctrb}{\EuScript{C}}
+#+LaTex_HEADER: \newcommand*{\obsv}{\EuScript{O}}
+
+#+title: Deadbeat control of the double integrator
+#+date: 2018-03-06
