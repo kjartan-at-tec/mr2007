@@ -1,5 +1,0 @@
-%% Final exam
-% 2nd order system, unstable normalized model of yaw dynamics of tanker
-
-w = 1; % sqrt(k/m)
-h = 0.4/w; % Sampling period, wh = 0.1 
